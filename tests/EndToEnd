@@ -1,0 +1,98 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  //await page.goto('https://demo.haroldwaste.com/authentication');
+
+  await page.goto('/');
+ 
+  await page.locator('[data-test-id="input-email"]').getByRole('textbox').fill('qa@julesai.com');
+
+  await page.locator('[data-test-id="input-password"]').getByRole('textbox').fill('QaJULES2023!');
+  await page.locator('[data-test-id="signin"]').click();
+  await page.getByRole('row', { name: 'Actions Purchase ref Status' }).getByRole('checkbox').check();
+  await page.getByRole('row', { name: 'Actions Purchase ref Status' }).getByRole('checkbox').uncheck();
+  await page.getByRole('row', { name: 'P2025-01-0-006-638 In' }).getByRole('checkbox').check();
+  await page.getByRole('row', { name: 'P2025-01-0-006-638 In' }).getByRole('checkbox').uncheck();
+  const page1Promise = page.waitForEvent('popup');
+  await page.locator('tr:nth-child(7) > td:nth-child(2) > a > .sc-gsnTZi > .MuiButtonBase-root').click();
+  const page1 = await page1Promise;
+  await page1.getByRole('button', { name: 'Add a material' }).click();
+  await page1.locator('[data-test-id="OperationModal\\.quality"]').getByRole('combobox').locator('div').nth(1).click();
+  await page1.getByRole('option', { name: '- Good soft mixed.' }).click();
+  await page1.getByText('- Good soft mixed').click();
+  await page1.locator('[data-test-id="OperationModal\\.mqc"]').getByRole('spinbutton').click();
+
+  await page1.locator('[data-test-id="OperationModal\\.maxQuantityToLoad"]').getByRole('spinbutton').click();  
+  await page1.locator('[data-test-id="OperationModal\\.maxQuantityToLoad"]').getByRole('spinbutton').fill('4');
+  await page1.locator('[data-test-id="OperationModal\\.averageQuantity"]').getByRole('spinbutton').click();
+  await page1.locator('[data-test-id="OperationModal\\.averageQuantity"]').getByRole('spinbutton').fill('4');
+  await page1.locator('[data-test-id="OperationModal\\.quantity"]').getByRole('spinbutton').click();
+  await page1.locator('[data-test-id="OperationModal\\.quantity"]').getByRole('spinbutton').fill('4');
+  await page1.locator('[data-test-id="OperationModal\\.incoterm"]').getByRole('textbox', { name: 'Search' }).click();
+  await page1.getByText('EXW').click();  
+  await page1.getByRole('button', { name: 'Save' }).click();
+
+  // await page.getByRole('button', { name: 'Add a purchase' }).click();
+  // await page.getByRole('button', { name: 'Local' }).click();
+  // await page.locator('[data-test-id="OperationModal\\.company"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.locator('#mui-20929-option-4').click();
+  // await page.locator('[data-test-id="OperationModal\\.site"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.getByText('TestingPayment').click();
+  // await page.locator('[data-test-id="OperationModal\\.origin"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.getByText('East-Coast').click();
+  // await page.locator('[data-test-id="OperationModal\\.billingEntity"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.getByText('COMPANY TT').click();
+  // await page.locator('[data-test-id="OperationModal\\.paymentTerms"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.locator('div:nth-child(2) > div:nth-child(2) > div:nth-child(4)').click();
+  // await page.getByRole('button', { name: 'Next' }).click();
+  // await page.locator('[data-test-id="OperationModal\\.quality"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.locator('#mui-66576-option-0').getByText('- Good soft mixed.').click();
+  // await page.getByRole('button', { name: 'Save' }).click();
+  // await page.locator('div:nth-child(5) > .sc-ftvSup').click();
+  // await page.getByText('Inventory').click();
+
+  // await page.getByRole('link', { name: 'Inbound loads' }).click();
+  // await page.getByRole('link', { name: 'Rate management' }).nth(1).click();
+  // await page.getByRole('row', { name: 'New York newark TRAILER NYC' }).getByRole('checkbox').check();
+  // await page.getByRole('row', { name: 'New York newark TRAILER NYC' }).getByRole('button').nth(1).click();
+  // await page.getByRole('button', { name: 'Save' }).click();
+  // await page.locator('tr:nth-child(9) > td:nth-child(2) > div > button').first().click();
+  // await page.locator('[data-test-id="Logistics\\.LocalLogisticOption\\.logisticMaterial"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.getByText('Flatbed').click();
+ 
+  // await page.getByRole('button', { name: 'Save' }).click();
+  // await page.locator('.MuiPaper-root > div > div > .MuiButtonBase-root').click();
+  // await page.locator('tr:nth-child(6) > td:nth-child(2) > div > button:nth-child(2)').click();
+  // await page.locator('[data-test-id="Logistics\\.LocalLogisticOption\\.preCarriageLine"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.getByRole('option', { name: 'AWS' }).click();
+  // await page.getByRole('button', { name: 'Save' }).click();
+  // await page.getByRole('row', { name: 'Leipzig KAYSERSBERG AMPLIROLL BT Transport 450.00 EUR/Truck Cardboard 08.03.2023 - 08.02.2024 123test', exact: true }).getByRole('button').first().click();
+  // await page.locator('[data-test-id="Logistics\\.LocalLogisticOption\\.preCarriageLine"]').getByRole('textbox', { name: 'Search' }).click();
+  // await page.locator('#mui-96038-option-2').getByText('ABCD Transport').click();
+  
+  // await page.getByRole('button', { name: 'Save' }).click();
+  // await page.locator('.MuiPaper-root > div > div > .MuiButtonBase-root').click();
+  // await page.getByRole('textbox', { name: 'Supplier' }).click();
+  // await page.getByText('Mumbai').click();
+  // await page.getByRole('button', { name: 'Clear filter(s)' }).click();
+  // await page.getByRole('link', { name: 'Payables', exact: true }).click();
+  // await page.getByRole('row', { name: 'Actions Load/Hold status Load' }).getByRole('checkbox').check();
+  // await page.getByTestId('CloseIcon').nth(1).click();
+  // await page.getByTestId('CloseIcon').click();
+  // await page.locator('[data-test-id="toBeReported\\.statuses"]').getByRole('button', { name: 'Open' }).click();
+  // await page.getByText('Closed').click();
+  // await page.getByRole('searchbox', { name: 'Search', exact: true }).click();
+  // await page.locator('#commandbar-search-tab-container').getByText('Quick actions').click();
+  // await page.getByText('Navigation').click();
+  // await page.locator('div').filter({ hasText: /^Load level list: containers, truck, barge, railcars, holds$/ }).click();
+  // await page.locator('[data-test-id="containers\\.statuses"]').getByRole('button', { name: 'Open' }).click();
+  // await page.getByRole('option', { name: 'Select all' }).getByRole('checkbox').check();
+  // await page.getByRole('option', { name: 'Unselect all' }).getByRole('checkbox').uncheck();
+  // await page.getByRole('option', { name: 'Delivered' }).getByRole('checkbox').check();
+  // await page.locator('div').filter({ hasText: /^Show closed loads\/holds$/ }).first().click();
+  // await page.getByRole('button', { name: 'HelpHub' }).click();
+  // await page.getByRole('button', { name: 'I can bulk upload loading' }).click();
+  // await page.locator('.commandbar-toplevel-1jy44jy > button:nth-child(2)').click();
+  // await page.getByText('QJ').click();
+  // await page.getByText('Log out').click();
+});

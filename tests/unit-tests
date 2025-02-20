@@ -1,0 +1,71 @@
+// tests/unit-tests.spec.js
+const { test, expect } = require('@playwright/test');
+
+// test('Verify the website title', async ({ page }) => {
+//   await page.goto('/');
+//   const title = await page.title();
+//   expect(title).toBe('Jules.ai');
+// });
+
+
+// test('Verify Login button is clickable', async ({ page }) => {
+//     // Navigate to the page
+//     await page.goto('/');
+  
+//     // Check if the Login button exists and is enabled
+//     const loginButton = await page.locator('//span[text()="Log in"]');  // Adjust the selector as needed
+//     await expect(loginButton).toBeVisible();
+//     await expect(loginButton).toBeEnabled();
+  
+//     // Click the button
+//     await loginButton.click();
+  
+//     // // You can add further assertions to verify that the login page opens
+//      await expect(page.url()).toContain('/authentication'); // Adjust according to actual URL after clicking
+//   });
+
+
+  test('Verify login functionality with valid credentials', async ({ page }) => {
+    // Navigate to the login page
+    await page.goto('/');
+
+   // Set the zoom level to 100%
+   await page.evaluate(() => {
+    document.body.style.transform = 'scale(1)';
+  });
+  
+    // Fill in the username and password
+    await page.fill('input[name="email"]', 'qa@julesai.com');
+    await page.fill('input[name="password"]', 'QaJULES2023!');
+  
+    // Submit the form
+    await page.click('button[type="submit"]');
+   await page.waitForNavigation();//({ waitUntil: 'load', timeout: 60000 });
+   
+     const userProfile = await page.locator('//div[text()="Qa JULES"]'); // Change this selector to match the UI
+  //  // await userProfile.waitFor({ state: 'visible', timeout: 60000 });
+  //  // await page.screenshot({ path: 'screenshot-before-click.png' });
+  //   console.log(await userProfile.isVisible());  // Log visibility status
+  //   console.log(await userProfile.isEnabled());  // Log enabled status
+
+  // page.close();
+  });
+
+  test('Verify Add a purchase button is clickable', async ({ page }) => {
+    // Navigate to the page
+    // await page.goto('/');
+  
+    // Check if the Login button exists and is enabled
+    const loginButton = await page.locator('//span[text()="Add a purchase"]');  // Adjust the selector as needed
+    await expect(loginButton).toBeVisible();
+    await expect(loginButton).toBeEnabled();
+  
+    // Click the button
+    await loginButton.click();
+  
+    // // // You can add further assertions to verify that the login page opens
+    //  await expect(page.url()).toContain('/authentication'); // Adjust according to actual URL after clicking
+  });
+
+
+  
