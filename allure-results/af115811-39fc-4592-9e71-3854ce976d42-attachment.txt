@@ -1,0 +1,2 @@
+Starting test: Add Material test started
+Finished test: Add Material test finished

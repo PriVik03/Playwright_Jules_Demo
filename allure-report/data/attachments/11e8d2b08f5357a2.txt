@@ -1,0 +1,2 @@
+Starting test: Search feature test started
+Finished test: Search feature test finished

@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","15090","test","chromium","Thu Feb 20 18:03:50 IST 2025","passed","Thu Feb 20 18:04:05 IST 2025","","LoginAndLogout.spec.js","",""
+"","7532","test","chromium","Thu Feb 20 18:03:43 IST 2025","passed","Thu Feb 20 18:03:51 IST 2025","","ErrorValidationForLogin.spec.js","",""
+"","1949","has title","chromium","Thu Feb 20 18:03:44 IST 2025","passed","Thu Feb 20 18:03:46 IST 2025","","example.spec.js","",""
+"","23727","test","chromium","Thu Feb 20 18:03:51 IST 2025","passed","Thu Feb 20 18:04:15 IST 2025","","SearchFeature.spec.js","",""
+"","3583","get started link","chromium","Thu Feb 20 18:03:45 IST 2025","passed","Thu Feb 20 18:03:49 IST 2025","","example.spec.js","",""
+"","10581","test","chromium","Thu Feb 20 18:03:47 IST 2025","passed","Thu Feb 20 18:03:57 IST 2025","","InValidLoginAndLogout.spec.js","",""
+"","35178","test","chromium","Thu Feb 20 18:03:43 IST 2025","passed","Thu Feb 20 18:04:19 IST 2025","","AddMaterial.spec.js","",""

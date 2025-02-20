@@ -1,0 +1,54 @@
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="37.948456">
+<testsuite name="AddMaterial.spec.js" timestamp="2025-02-20T12:33:41.792Z" hostname="chromium" tests="1" failures="0" skipped="0" time="35.178" errors="0">
+<testcase name="test" classname="AddMaterial.spec.js" time="35.178">
+<system-out>
+<![CDATA[Starting test: Add Material test started
+Quality button is not clickable, skipping related actions.
+Finished test: Add Material test finished
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ErrorValidationForLogin.spec.js" timestamp="2025-02-20T12:33:41.792Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.532" errors="0">
+<testcase name="test" classname="ErrorValidationForLogin.spec.js" time="7.532">
+<system-out>
+<![CDATA[Starting test: Error validation test started
+Finished test: Error validation test finished
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="example.spec.js" timestamp="2025-02-20T12:33:41.792Z" hostname="chromium" tests="2" failures="0" skipped="0" time="5.532" errors="0">
+<testcase name="has title" classname="example.spec.js" time="1.949">
+</testcase>
+<testcase name="get started link" classname="example.spec.js" time="3.583">
+</testcase>
+</testsuite>
+<testsuite name="InValidLoginAndLogout.spec.js" timestamp="2025-02-20T12:33:41.792Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.581" errors="0">
+<testcase name="test" classname="InValidLoginAndLogout.spec.js" time="10.581">
+<system-out>
+<![CDATA[Starting test: Invalid Login And Logout test started
+Finished test: Invalid Login And Logout test finished
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="LoginAndLogout.spec.js" timestamp="2025-02-20T12:33:41.792Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.09" errors="0">
+<testcase name="test" classname="LoginAndLogout.spec.js" time="15.09">
+<system-out>
+<![CDATA[Starting test: Login And Logout test started
+Finished test: Login And Logout test finished
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="SearchFeature.spec.js" timestamp="2025-02-20T12:33:41.792Z" hostname="chromium" tests="1" failures="0" skipped="0" time="23.727" errors="0">
+<testcase name="test" classname="SearchFeature.spec.js" time="23.727">
+<system-out>
+<![CDATA[Starting test: Search feature test started
+Finished test: Search feature test finished
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

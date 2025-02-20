@@ -1,0 +1,2 @@
+Starting test: Login And Logout test started
+Finished test: Login And Logout test finished
