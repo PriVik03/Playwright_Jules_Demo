@@ -30,7 +30,7 @@ jobs:
         run: npx playwright test
 
       - name: Upload Playwright Test Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: playwright-test-results
-          path: test-results  # Adjust if your Playwright reports are stored elsewhere
+          path: playwright-report  # Adjust if your Playwright reports are stored elsewhere
