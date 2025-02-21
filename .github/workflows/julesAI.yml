@@ -26,11 +26,16 @@ jobs:
           npm install
           npx playwright install  # Install Playwright browsers
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run Playwright Tests
+        run: |
+          npx playwright install
+          npx playwright test --reporter=html --output=playwright-report  # Run Playwright tests and generate HTML report
+
+      - name: List files in the playwright-report directory  # Debugging step to ensure report exists
+        run: ls -R playwright-report
 
       - name: Upload Playwright Test Results
         uses: actions/upload-artifact@v3
         with:
           name: playwright-test-results
-          path: playwright-report 
+          path: playwright-report  # Upload the Playwright test results
