@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
-import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({path:path.resolve(__dirname,'.','.env')});
+// import dotenv from 'dotenv';
 
 test.beforeEach(async ({ page }) => {
   console.log(`Starting test: ${"Search feature test started"}`);
@@ -11,17 +9,21 @@ test.afterEach(async ({ page }) => {
   console.log(`Finished test: ${"Search feature test finished"}`);
 });
 
-require('dotenv').config();
+// require('dotenv').config();
+const logindata= JSON.parse( JSON.stringify(require("../data/testdata.json")));
+const validData = logindata.find((data) => data.email && data.password);
 
 test('test', async ({ page }) => {
-  const email = process.env.email;
-  const password = process.env.password;
+  // const email = process.env.email;
+  // const password = process.env.password;  
 
   await page.goto('/');
-  await page.locator('[data-test-id="input-email"]').getByRole('textbox').fill(email);
-  await page.locator('[data-test-id="input-password"]').getByRole('textbox').fill(password);
-  await page.locator('[data-test-id="signin"]').click();
+  // await page.locator('[data-test-id="input-email"]').getByRole('textbox').fill(email);
+  // await page.locator('[data-test-id="input-password"]').getByRole('textbox').fill(password);
 
+  await page.locator('[data-test-id="input-email"]').getByRole('textbox').fill(validData.email);
+  await page.locator('[data-test-id="input-password"]').getByRole('textbox').fill(validData.password);
+  await page.locator('[data-test-id="signin"]').click();
 
   await page.getByRole('searchbox', { name: 'Search', exact: true }).click();
   await page.locator('#commandbar-search-tab-container').getByText('Navigation').click();

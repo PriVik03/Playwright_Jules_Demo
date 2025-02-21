@@ -1,0 +1,11 @@
+[
+  {
+      "email": "qa@julesai.com",
+      "password": "QaJULES2023!"
+  },
+  {
+    "invalidEmail": "invalid@julesai.com",
+    "invalidPassword": "WrongPassword"
+  }
+]
+  

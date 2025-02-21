@@ -9,8 +9,6 @@ test.afterEach(async ({ page }) => {
 });
 
 test('test', async ({ page }) => {
-  // const email = process.env.email;
-  // const password = process.env.password;
   await page.goto('/');
   await page.locator('[data-test-id="signin"]').click();
   await page.getByText('Required').first().click();
@@ -18,8 +16,4 @@ test('test', async ({ page }) => {
   await page.getByText('Required').nth(1).click();
   await expect(page.locator('form')).toContainText('Required');
  page.close();
-  // await page.getByText('Required').first().click({
-  //   button: 'right'
-  // }); 
-  
 });
