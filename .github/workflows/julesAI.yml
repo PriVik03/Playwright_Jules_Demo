@@ -35,7 +35,7 @@ jobs:
         run: ls -R playwright-report
 
       - name: Upload Playwright Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: playwright-test-results
           path: playwright-report  # Upload the Playwright test results
