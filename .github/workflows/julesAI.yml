@@ -29,7 +29,7 @@ jobs:
       - name: Run Playwright Tests
         run: |
           npx playwright install
-          npx playwright test --reporter=html --output=playwright-report  # Run Playwright tests and generate HTML report
+          npx playwright test --project=chromium --reporter=html --output=playwright-report  # Run Playwright tests and generate HTML report
 
       - name: List files in the playwright-report directory  # Debugging step to ensure report exists
         run: ls -R playwright-report
